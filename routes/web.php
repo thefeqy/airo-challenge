@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
-        $token = auth()->user()->createToken('web')->plainTextToken;
+        $token = auth()->user()->createToken('web')->plainTextToken; // TODO: this is only for test
         return Inertia::render('dashboard', ['token' => $token]);
     })->name('dashboard');
 });
