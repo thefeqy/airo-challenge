@@ -34,7 +34,7 @@ class QuotationService
             $total = $this->calculatePrices($agesArray, $tripLength);
 
             return Quotation::query()->create([
-                'total' => $total,
+                'total' => round($total, 1),
                 'currency_id' => $currencyId,
             ]);
         } catch (\Throwable $th) {
