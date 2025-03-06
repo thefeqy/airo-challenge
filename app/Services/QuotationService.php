@@ -50,7 +50,7 @@ class QuotationService
      */
     private function getTripLength(string $startDate, string $endDate): int
     {
-        return Carbon::parse($startDate)->diffInDays(Carbon::parse($endDate));
+        return Carbon::parse($startDate)->diffInDays(Carbon::parse($endDate)) + 1;
     }
 
     /**
